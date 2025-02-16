@@ -10,3 +10,9 @@ C:\Users\slava\Desktop\lab9\lab9\TextEditorFunctions\obj\Debug\TextEditorFunctio
 C:\Users\slava\Desktop\lab9\lab9\TextEditorFunctions\obj\Debug\TextEditorFunctions.csproj.CoreCompileInputs.cache
 C:\Users\slava\Desktop\lab9\lab9\TextEditorFunctions\obj\Debug\TextEditorFunctions.dll
 C:\Users\slava\Desktop\lab9\lab9\TextEditorFunctions\obj\Debug\TextEditorFunctions.pdb
+D:\Projects\RPMLAB9\TextEditorFunctions\bin\Debug\TextEditorFunctions.dll
+D:\Projects\RPMLAB9\TextEditorFunctions\bin\Debug\TextEditorFunctions.pdb
+D:\Projects\RPMLAB9\TextEditorFunctions\obj\Debug\TextEditorFunctions.csproj.AssemblyReference.cache
+D:\Projects\RPMLAB9\TextEditorFunctions\obj\Debug\TextEditorFunctions.csproj.CoreCompileInputs.cache
+D:\Projects\RPMLAB9\TextEditorFunctions\obj\Debug\TextEditorFunctions.dll
+D:\Projects\RPMLAB9\TextEditorFunctions\obj\Debug\TextEditorFunctions.pdb

@@ -16,3 +16,9 @@ H:\rpm\lab9\lab9\lab9\IMTFinder\obj\Debug\IMTFinder.csproj.AssemblyReference.cac
 H:\rpm\lab9\lab9\lab9\IMTFinder\obj\Debug\IMTFinder.csproj.CoreCompileInputs.cache
 H:\rpm\lab9\lab9\lab9\IMTFinder\obj\Debug\IMTFinder.dll
 H:\rpm\lab9\lab9\lab9\IMTFinder\obj\Debug\IMTFinder.pdb
+D:\Projects\RPMLAB9\IMTFinder\bin\Debug\IMTFinder.dll
+D:\Projects\RPMLAB9\IMTFinder\bin\Debug\IMTFinder.pdb
+D:\Projects\RPMLAB9\IMTFinder\obj\Debug\IMTFinder.csproj.AssemblyReference.cache
+D:\Projects\RPMLAB9\IMTFinder\obj\Debug\IMTFinder.csproj.CoreCompileInputs.cache
+D:\Projects\RPMLAB9\IMTFinder\obj\Debug\IMTFinder.dll
+D:\Projects\RPMLAB9\IMTFinder\obj\Debug\IMTFinder.pdb

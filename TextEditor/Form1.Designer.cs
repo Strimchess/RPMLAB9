@@ -238,15 +238,15 @@
             // 
             this.toolStripStatusLabel1.Margin = new System.Windows.Forms.Padding(0, 3, 100, 2);
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(133, 17);
-            this.toolStripStatusLabel1.Text = "Количество символов:";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(142, 17);
+            this.toolStripStatusLabel1.Text = "Количество символов: 0";
             // 
             // toolStripStatusLabel2
             // 
             this.toolStripStatusLabel2.Margin = new System.Windows.Forms.Padding(0, 3, 100, 2);
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(43, 17);
-            this.toolStripStatusLabel2.Text = "Строк:";
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(52, 17);
+            this.toolStripStatusLabel2.Text = "Строк: 0";
             // 
             // toolStripStatusLabel3
             // 

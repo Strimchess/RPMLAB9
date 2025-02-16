@@ -15,12 +15,18 @@ namespace TextEditor
         public Form2()
         {
             InitializeComponent();
-            richTextBox1.ForeColor = Color.Black;
         }
+
+
 
         private void button1_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            richTextBox1.ForeColor = Color.Black;
         }
     }
 }

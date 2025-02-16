@@ -35,8 +35,8 @@ namespace IMTFinder
             {
                 using (StreamReader reader = new StreamReader(fileName, System.Text.Encoding.UTF8))
                 {
-                    string text = reader.ReadToEnd().Replace("\r\n", "");
-                    result = text.Split(';');
+                    string text = reader.ReadToEnd().TrimEnd(';').Replace("\n", "").Replace("\r", "");
+                    result = text.Split(';', (char)StringSplitOptions.RemoveEmptyEntries);
                 }
             }
             catch { }
@@ -47,6 +47,7 @@ namespace IMTFinder
         {
             Person[] result = new Person[data.Length];
             for (int i = 0; i < result.Length; i++) {
+                if (data[i] != "" && data[i] != string.Empty) { 
                 string[] temp = data[i].Split('/');
                 Person pers = new Person();
                 try
@@ -54,13 +55,14 @@ namespace IMTFinder
                     pers.FullName = temp[0];
                     pers.Weight = Math.Round(double.Parse(temp[1]), 2);
                     pers.Height = Math.Round(double.Parse(temp[2]), 2);
-                    pers.IMT = Math.Round(pers.Weight/Math.Pow(pers.Height, 2), 2);
-                    result[i] = pers; 
+                    pers.IMT = Math.Round(pers.Weight / Math.Pow(pers.Height, 2), 2);
+                    result[i] = pers;
                 }
                 catch
                 {
 
                 }
+            }
             }
             return result;
         }

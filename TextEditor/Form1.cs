@@ -4,6 +4,9 @@ using TextEditorFunctions;
 using System.Windows.Forms;
 using System.IO;
 using System.Collections.Generic;
+using System.Linq;
+using System.Drawing.Printing;
+using System.Drawing;
 
 namespace TextEditor
 {
@@ -19,6 +22,7 @@ namespace TextEditor
         {
             InitializeComponent();
             панельИнструментовToolStripMenuItem.Checked = true;
+            toolStripStatusLabel3.Text = "Состояние: создание файла";
         }
 
 
@@ -42,6 +46,8 @@ namespace TextEditor
             {
                 string text = TextEditorFunctions.TextEditor.Open(fileDialog.FileName);
                 richTextBox1.Text = text;
+                this.Text = fileDialog.FileName;
+                toolStripStatusLabel3.Text = "Состояние: открытие файла"; 
             }
         }
 
@@ -76,8 +82,22 @@ namespace TextEditor
 
         private void toolStripButton5_Click(object sender, EventArgs e)
         {
+            PrintDocument printDocument = new PrintDocument();
+            printDocument.PrintPage += new PrintPageEventHandler(PrintPageHandler);
+
             PrintDialog printDialog = new PrintDialog();
-            printDialog.ShowDialog();
+            printDialog.Document = printDocument;
+
+            if (printDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                printDocument.Print();
+            }
+
+        }
+
+        private void PrintPageHandler(object sender, PrintPageEventArgs e)
+        {
+            e.Graphics.DrawString(richTextBox1.Text, richTextBox1.Font, Brushes.Black, new PointF(50, 50));
         }
 
 
@@ -96,6 +116,8 @@ namespace TextEditor
                 richTextBox1.Text = string.Empty;
                 fileName = string.Empty;
                 isSaved = false;
+                this.Text = "Новый файл";
+                toolStripStatusLabel3.Text = "Состояние: создание файла";
                 return;
             }
             if (fileName != string.Empty && !isSaved)
@@ -112,12 +134,16 @@ namespace TextEditor
                     richTextBox1.Text = string.Empty;
                     fileName = string.Empty;
                     isSaved = false;
+                    this.Text = "Новый файл";
+                    toolStripStatusLabel3.Text = "Состояние: создание файла";
                 }
                 else if (result == DialogResult.No)
                 {
                     richTextBox1.Text = string.Empty;
                     fileName = string.Empty;
                     isSaved = false;
+                    this.Text = "Новый файл";
+                    toolStripStatusLabel3.Text = "Состояние: создание файла";
                 }
                 return;
             }
@@ -127,7 +153,16 @@ namespace TextEditor
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
-            
+            if (richTextBox1.Text != string.Empty)
+            {
+                toolStripStatusLabel1.Text = $"Количество символов: {richTextBox1.Text.Length}";
+                toolStripStatusLabel2.Text = $"Строк: {richTextBox1.Text.Count(nchar => nchar == '\n') + 1}";
+            }
+            else
+            {
+                toolStripStatusLabel1.Text = "Количество символов: 0";
+                toolStripStatusLabel2.Text = "Строк: 0";
+            }
             isSaved = false;
         }
 
@@ -224,55 +259,69 @@ namespace TextEditor
         {
             toolStripButton1_Click(sender, e);
 
-            OpenFileDialog fileDialog = new OpenFileDialog();
-            fileDialog.Filter = "Text|*.txt|All|*.*";
-            fileDialog.ShowDialog();
-            this.fileName = fileDialog.FileName;
-            if (fileDialog.FileName != string.Empty)
+            DialogResult result = MessageBox.Show(
+             "Функция ИМТ использует только текстовые файлы с определенным форматированием\n" +
+             "Пример:\n" +
+             "Иванов Сергей/40/1,99;\nПетров Петр/65/1,81;\nИванов Иван/5/1,7",
+             "Пожалйста, используйте правильный формат!",
+             MessageBoxButtons.OKCancel,
+             MessageBoxIcon.Information);
+
+            if (result == DialogResult.OK)
             {
-                Person[] data = IMT.FindIMT(fileDialog.FileName);
-                List<Person> smallIMT = new List<Person>();
-                List<Person> GoodIMT = new List<Person>();
-                List<Person> BigIMT = new List<Person>();
-
-                foreach (Person person in data) {
-                    if (person.IMT < 18)
-                    {
-                        smallIMT.Add(person);
-                    }
-                    else if (person.IMT > 25)
-                    {
-                        BigIMT.Add(person);
-                    }
-                    else
-                    {
-                        GoodIMT.Add(person);
-                    }
-                }
-
-                richTextBox1.AppendText("Недостаточный ИМТ (< 18):\n");
-                foreach (Person person in smallIMT)
+                OpenFileDialog fileDialog = new OpenFileDialog();
+                fileDialog.Filter = "Text|*.txt|All|*.*";
+                fileDialog.ShowDialog();
+                if (fileDialog.FileName != string.Empty)
                 {
-                    richTextBox1.AppendText(person.ToString() + "\n");
-                }
+                    Person[] data = IMT.FindIMT(fileDialog.FileName);
+                    List<Person> smallIMT = new List<Person>();
+                    List<Person> GoodIMT = new List<Person>();
+                    List<Person> BigIMT = new List<Person>();
 
-                richTextBox1.AppendText("\nХороший ИМТ (18 - 25):\n");
-                foreach (Person person in GoodIMT)
-                {
-                    richTextBox1.AppendText(person.ToString() + "\n");
-                }
+                    foreach (Person person in data)
+                    {
+                        if (person.IMT < 18)
+                        {
+                            smallIMT.Add(person);
+                        }
+                        else if (person.IMT > 25)
+                        {
+                            BigIMT.Add(person);
+                        }
+                        else
+                        {
+                            GoodIMT.Add(person);
+                        }
+                    }
 
-                richTextBox1.AppendText("\nБольшой ИМТ (> 25):\n");
-                foreach (Person person in BigIMT)
-                {
-                    richTextBox1.AppendText(person.ToString() + "\n");
+                    richTextBox1.AppendText("Недостаточный ИМТ (< 18):\n");
+                    foreach (Person person in smallIMT)
+                    {
+                        richTextBox1.AppendText(person.ToString() + "\n");
+                    }
+
+                    richTextBox1.AppendText("\nХороший ИМТ (18 - 25):\n");
+                    foreach (Person person in GoodIMT)
+                    {
+                        richTextBox1.AppendText(person.ToString() + "\n");
+                    }
+
+                    richTextBox1.AppendText("\nБольшой ИМТ (> 25):\n");
+                    foreach (Person person in BigIMT)
+                    {
+                        richTextBox1.AppendText(person.ToString() + "\n");
+                    }
                 }
+            }
+            else
+            {
+                MessageBox.Show("Отмена");
             }
         }
 
         private void справкаToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
             if (!form2.Created) {
                 form2 = new Form2();
                 form2.Show();
