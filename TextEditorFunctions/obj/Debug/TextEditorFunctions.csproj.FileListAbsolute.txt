@@ -1,0 +1,12 @@
+E:\rpm\lab9\lab9\TextEditorFunctions\bin\Debug\TextEditorFunctions.dll
+E:\rpm\lab9\lab9\TextEditorFunctions\bin\Debug\TextEditorFunctions.pdb
+E:\rpm\lab9\lab9\TextEditorFunctions\obj\Debug\TextEditorFunctions.csproj.AssemblyReference.cache
+E:\rpm\lab9\lab9\TextEditorFunctions\obj\Debug\TextEditorFunctions.csproj.CoreCompileInputs.cache
+E:\rpm\lab9\lab9\TextEditorFunctions\obj\Debug\TextEditorFunctions.dll
+E:\rpm\lab9\lab9\TextEditorFunctions\obj\Debug\TextEditorFunctions.pdb
+C:\Users\slava\Desktop\lab9\lab9\TextEditorFunctions\bin\Debug\TextEditorFunctions.dll
+C:\Users\slava\Desktop\lab9\lab9\TextEditorFunctions\bin\Debug\TextEditorFunctions.pdb
+C:\Users\slava\Desktop\lab9\lab9\TextEditorFunctions\obj\Debug\TextEditorFunctions.csproj.AssemblyReference.cache
+C:\Users\slava\Desktop\lab9\lab9\TextEditorFunctions\obj\Debug\TextEditorFunctions.csproj.CoreCompileInputs.cache
+C:\Users\slava\Desktop\lab9\lab9\TextEditorFunctions\obj\Debug\TextEditorFunctions.dll
+C:\Users\slava\Desktop\lab9\lab9\TextEditorFunctions\obj\Debug\TextEditorFunctions.pdb
