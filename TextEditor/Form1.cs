@@ -13,7 +13,7 @@ namespace TextEditor
     public partial class Form1 : Form
     {
 
-        public string fileName;
+        public string fileName = string.Empty;
         public bool isSaved;
         Form2 form2 = new Form2();
 
@@ -56,8 +56,16 @@ namespace TextEditor
 
         private void сохранитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            TextEditorFunctions.TextEditor.Save(this.fileName, richTextBox1.Text);
-            isSaved = true;
+            if (fileName == string.Empty)
+            {
+                сохранитьКакToolStripMenuItem_Click(sender, e);
+            }
+            else
+            {
+                TextEditorFunctions.TextEditor.Save(this.fileName, richTextBox1.Text);
+                isSaved = true;
+                MessageBox.Show("Файл успешно сохранен!", "", MessageBoxButtons.OK);
+            }
         }
 
 
@@ -69,6 +77,7 @@ namespace TextEditor
             saveFileDialog.Filter = "Text|*.txt|All|*.*";
             saveFileDialog.ShowDialog();
             TextEditorFunctions.TextEditor.SaveAs(saveFileDialog.FileName, richTextBox1.Text);
+            MessageBox.Show("Файл успешно сохранен!", "", MessageBoxButtons.OK);
         }
 
 
@@ -120,7 +129,7 @@ namespace TextEditor
                 toolStripStatusLabel3.Text = "Состояние: создание файла";
                 return;
             }
-            if (fileName != string.Empty && !isSaved)
+            if ((fileName != string.Empty && !isSaved) || (fileName == string.Empty && richTextBox1.Text != string.Empty))
             {
                 DialogResult result = MessageBox.Show(
              "У вас есть несохраненные изменения. Хотите сохранить изменения перед выходом?",
