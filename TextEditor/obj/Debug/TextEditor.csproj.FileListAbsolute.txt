@@ -70,3 +70,19 @@ D:\Projects\RPMLAB9\TextEditor\obj\Debug\TextEditor.csproj.CoreCompileInputs.cac
 D:\Projects\RPMLAB9\TextEditor\obj\Debug\TextEditor.csproj.Up2Date
 D:\Projects\RPMLAB9\TextEditor\obj\Debug\TextEditor.exe
 D:\Projects\RPMLAB9\TextEditor\obj\Debug\TextEditor.pdb
+D:\3 курс\рпм\лабораторные_работы\lab9_new\RPMLAB9\TextEditor\bin\Debug\TextEditor.exe.config
+D:\3 курс\рпм\лабораторные_работы\lab9_new\RPMLAB9\TextEditor\bin\Debug\TextEditor.exe
+D:\3 курс\рпм\лабораторные_работы\lab9_new\RPMLAB9\TextEditor\bin\Debug\TextEditor.pdb
+D:\3 курс\рпм\лабораторные_работы\lab9_new\RPMLAB9\TextEditor\bin\Debug\IMTFinder.dll
+D:\3 курс\рпм\лабораторные_работы\lab9_new\RPMLAB9\TextEditor\bin\Debug\TextEditorFunctions.dll
+D:\3 курс\рпм\лабораторные_работы\lab9_new\RPMLAB9\TextEditor\bin\Debug\IMTFinder.pdb
+D:\3 курс\рпм\лабораторные_работы\lab9_new\RPMLAB9\TextEditor\bin\Debug\TextEditorFunctions.pdb
+D:\3 курс\рпм\лабораторные_работы\lab9_new\RPMLAB9\TextEditor\obj\Debug\TextEditor.csproj.AssemblyReference.cache
+D:\3 курс\рпм\лабораторные_работы\lab9_new\RPMLAB9\TextEditor\obj\Debug\TextEditor.Form1.resources
+D:\3 курс\рпм\лабораторные_работы\lab9_new\RPMLAB9\TextEditor\obj\Debug\TextEditor.Form2.resources
+D:\3 курс\рпм\лабораторные_работы\lab9_new\RPMLAB9\TextEditor\obj\Debug\TextEditor.Properties.Resources.resources
+D:\3 курс\рпм\лабораторные_работы\lab9_new\RPMLAB9\TextEditor\obj\Debug\TextEditor.csproj.GenerateResource.cache
+D:\3 курс\рпм\лабораторные_работы\lab9_new\RPMLAB9\TextEditor\obj\Debug\TextEditor.csproj.CoreCompileInputs.cache
+D:\3 курс\рпм\лабораторные_работы\lab9_new\RPMLAB9\TextEditor\obj\Debug\TextEditor.csproj.CopyComplete
+D:\3 курс\рпм\лабораторные_работы\lab9_new\RPMLAB9\TextEditor\obj\Debug\TextEditor.exe
+D:\3 курс\рпм\лабораторные_работы\lab9_new\RPMLAB9\TextEditor\obj\Debug\TextEditor.pdb

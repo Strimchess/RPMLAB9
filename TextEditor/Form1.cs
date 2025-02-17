@@ -272,7 +272,7 @@ namespace TextEditor
              "Функция ИМТ использует только текстовые файлы с определенным форматированием\n" +
              "Пример:\n" +
              "Иванов Сергей/40/1,99;\nПетров Петр/65/1,81;\nИванов Иван/5/1,7",
-             "Пожалйста, используйте правильный формат!",
+             "Пожалуйста, используйте правильный формат!",
              MessageBoxButtons.OKCancel,
              MessageBoxIcon.Information);
 
@@ -310,13 +310,13 @@ namespace TextEditor
                         richTextBox1.AppendText(person.ToString() + "\n");
                     }
 
-                    richTextBox1.AppendText("\nХороший ИМТ (18 - 25):\n");
+                    richTextBox1.AppendText("\nИМТ в норме (18 - 25):\n");
                     foreach (Person person in GoodIMT)
                     {
                         richTextBox1.AppendText(person.ToString() + "\n");
                     }
 
-                    richTextBox1.AppendText("\nБольшой ИМТ (> 25):\n");
+                    richTextBox1.AppendText("\nИзбыточный ИМТ (> 25):\n");
                     foreach (Person person in BigIMT)
                     {
                         richTextBox1.AppendText(person.ToString() + "\n");
