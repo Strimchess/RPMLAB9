@@ -10,7 +10,10 @@ namespace IMTFinder
         public static Person[] FindIMT(string fileName)
         {
             Person[] data = IMT.Parse(IMT.Import(fileName));
-
+            if (data == null)
+            {
+                return null;
+            }
             for (int i = 0; i < data.Length - 1; i++)
             {
                 for (int j = 0; j < data.Length - i - 1; j++)
@@ -58,9 +61,9 @@ namespace IMTFinder
                     pers.IMT = Math.Round(pers.Weight / Math.Pow(pers.Height, 2), 2);
                     result[i] = pers;
                 }
-                catch
+                catch(IndexOutOfRangeException)
                 {
-
+                        return null;
                 }
             }
             }
@@ -75,9 +78,6 @@ namespace IMTFinder
 
     public class Person
     {
-
-
-
         public string FullName { get; set; }
         public double Height { get; set; }
         public double Weight { get; set; }

@@ -86,3 +86,19 @@ D:\3 курс\рпм\лабораторные_работы\lab9_new\RPMLAB9\Text
 D:\3 курс\рпм\лабораторные_работы\lab9_new\RPMLAB9\TextEditor\obj\Debug\TextEditor.csproj.CopyComplete
 D:\3 курс\рпм\лабораторные_работы\lab9_new\RPMLAB9\TextEditor\obj\Debug\TextEditor.exe
 D:\3 курс\рпм\лабораторные_работы\lab9_new\RPMLAB9\TextEditor\obj\Debug\TextEditor.pdb
+C:\Users\329191-13\Desktop\RPMLAB9\TextEditor\bin\Debug\TextEditor.exe.config
+C:\Users\329191-13\Desktop\RPMLAB9\TextEditor\bin\Debug\TextEditor.exe
+C:\Users\329191-13\Desktop\RPMLAB9\TextEditor\bin\Debug\TextEditor.pdb
+C:\Users\329191-13\Desktop\RPMLAB9\TextEditor\bin\Debug\IMTFinder.dll
+C:\Users\329191-13\Desktop\RPMLAB9\TextEditor\bin\Debug\TextEditorFunctions.dll
+C:\Users\329191-13\Desktop\RPMLAB9\TextEditor\bin\Debug\IMTFinder.pdb
+C:\Users\329191-13\Desktop\RPMLAB9\TextEditor\bin\Debug\TextEditorFunctions.pdb
+C:\Users\329191-13\Desktop\RPMLAB9\TextEditor\obj\Debug\TextEditor.csproj.AssemblyReference.cache
+C:\Users\329191-13\Desktop\RPMLAB9\TextEditor\obj\Debug\TextEditor.Form1.resources
+C:\Users\329191-13\Desktop\RPMLAB9\TextEditor\obj\Debug\TextEditor.Form2.resources
+C:\Users\329191-13\Desktop\RPMLAB9\TextEditor\obj\Debug\TextEditor.Properties.Resources.resources
+C:\Users\329191-13\Desktop\RPMLAB9\TextEditor\obj\Debug\TextEditor.csproj.GenerateResource.cache
+C:\Users\329191-13\Desktop\RPMLAB9\TextEditor\obj\Debug\TextEditor.csproj.CoreCompileInputs.cache
+C:\Users\329191-13\Desktop\RPMLAB9\TextEditor\obj\Debug\TextEditor.csproj.Up2Date
+C:\Users\329191-13\Desktop\RPMLAB9\TextEditor\obj\Debug\TextEditor.exe
+C:\Users\329191-13\Desktop\RPMLAB9\TextEditor\obj\Debug\TextEditor.pdb

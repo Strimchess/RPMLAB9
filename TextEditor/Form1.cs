@@ -77,7 +77,14 @@ namespace TextEditor
             saveFileDialog.Filter = "Text|*.txt|All|*.*";
             saveFileDialog.ShowDialog();
             TextEditorFunctions.TextEditor.SaveAs(saveFileDialog.FileName, richTextBox1.Text);
-            MessageBox.Show("Файл успешно сохранен!", "", MessageBoxButtons.OK);
+            try
+            {
+                if (new FileInfo(saveFileDialog.FileName).Exists)
+                {
+                    MessageBox.Show("Файл успешно сохранен!", "", MessageBoxButtons.OK);
+                }
+            }
+            catch { }
         }
 
 
@@ -284,6 +291,12 @@ namespace TextEditor
                 if (fileDialog.FileName != string.Empty)
                 {
                     Person[] data = IMT.FindIMT(fileDialog.FileName);
+                    if (data == null)
+                    {
+                        MessageBox.Show("Повторите попытку с другим файлом!", "Неверный формат файла!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+
+                    }
                     List<Person> smallIMT = new List<Person>();
                     List<Person> GoodIMT = new List<Person>();
                     List<Person> BigIMT = new List<Person>();

@@ -22,3 +22,9 @@ D:\Projects\RPMLAB9\IMTFinder\obj\Debug\IMTFinder.csproj.AssemblyReference.cache
 D:\Projects\RPMLAB9\IMTFinder\obj\Debug\IMTFinder.csproj.CoreCompileInputs.cache
 D:\Projects\RPMLAB9\IMTFinder\obj\Debug\IMTFinder.dll
 D:\Projects\RPMLAB9\IMTFinder\obj\Debug\IMTFinder.pdb
+C:\Users\329191-13\Desktop\RPMLAB9\IMTFinder\bin\Debug\IMTFinder.dll
+C:\Users\329191-13\Desktop\RPMLAB9\IMTFinder\bin\Debug\IMTFinder.pdb
+C:\Users\329191-13\Desktop\RPMLAB9\IMTFinder\obj\Debug\IMTFinder.csproj.AssemblyReference.cache
+C:\Users\329191-13\Desktop\RPMLAB9\IMTFinder\obj\Debug\IMTFinder.csproj.CoreCompileInputs.cache
+C:\Users\329191-13\Desktop\RPMLAB9\IMTFinder\obj\Debug\IMTFinder.dll
+C:\Users\329191-13\Desktop\RPMLAB9\IMTFinder\obj\Debug\IMTFinder.pdb
