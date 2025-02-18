@@ -1,12 +1,11 @@
 ﻿using System;
 using IMTFinder;
-using TextEditorFunctions;
 using System.Windows.Forms;
 using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Drawing.Printing;
-using System.Drawing;
+
 
 namespace TextEditor
 {
@@ -37,7 +36,6 @@ namespace TextEditor
 
         private void открытьToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            isSaved = true;
             OpenFileDialog fileDialog = new OpenFileDialog();
             fileDialog.Filter = "Text|*.txt|All|*.*";
             fileDialog.ShowDialog();
@@ -47,8 +45,9 @@ namespace TextEditor
                 string text = TextEditorFunctions.TextEditor.Open(fileDialog.FileName);
                 richTextBox1.Text = text;
                 this.Text = fileDialog.FileName;
-                toolStripStatusLabel3.Text = "Состояние: открытие файла"; 
+                toolStripStatusLabel3.Text = "Состояние: открытие файла";
             }
+            isSaved = true;
         }
 
 
@@ -96,25 +95,22 @@ namespace TextEditor
 
 
 
+
         private void toolStripButton5_Click(object sender, EventArgs e)
         {
-            PrintDocument printDocument = new PrintDocument();
-            printDocument.PrintPage += new PrintPageEventHandler(PrintPageHandler);
+            PrintDocument printDocument = Printer.GetPrintDocument(richTextBox1.Text, richTextBox1.Font);
 
-            PrintDialog printDialog = new PrintDialog();
-            printDialog.Document = printDocument;
+            PrintDialog printDialog = new PrintDialog
+            {
+                Document = printDocument
+            };
 
-            if (printDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            if (printDialog.ShowDialog() == DialogResult.OK)
             {
                 printDocument.Print();
             }
-
         }
 
-        private void PrintPageHandler(object sender, PrintPageEventArgs e)
-        {
-            e.Graphics.DrawString(richTextBox1.Text, richTextBox1.Font, Brushes.Black, new PointF(50, 50));
-        }
 
 
 
@@ -200,7 +196,7 @@ namespace TextEditor
                 richTextBox1.Height -= 60;
                 richTextBox1.Location = new System.Drawing.Point(6, 87);
             }
-            else 
+            else
             {
                 richTextBox1.Height += 60;
                 richTextBox1.Location = new System.Drawing.Point(6, 27);
@@ -218,7 +214,7 @@ namespace TextEditor
             richTextBox1.Font = ftDialog.Font;
         }
 
-        
+
 
 
         private void Form1_Load(object sender, EventArgs e)
@@ -232,42 +228,45 @@ namespace TextEditor
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            DialogResult result = MessageBox.Show(
-             "У вас есть несохраненные изменения. Хотите сохранить изменения перед выходом?",
-             "Подтвердите сохранение",
-             MessageBoxButtons.YesNoCancel,
-             MessageBoxIcon.Warning);
-
-
-            if (result == DialogResult.Yes)
+            if (isSaved == false)
             {
-                if (fileName == string.Empty)
+                DialogResult result = MessageBox.Show(
+                 "У вас есть несохраненные изменения. Хотите сохранить изменения перед выходом?",
+                 "Подтвердите сохранение",
+                 MessageBoxButtons.YesNoCancel,
+                 MessageBoxIcon.Warning);
+
+
+                if (result == DialogResult.Yes)
                 {
-                    isSaved = false;
-                    SaveFileDialog saveFileDialog = new SaveFileDialog();
-                    saveFileDialog.Filter = "Text|*.txt|All|*.*";
-                    DialogResult res = saveFileDialog.ShowDialog();
-                    if (res == DialogResult.Cancel)
+                    if (fileName == string.Empty)
                     {
-                        e.Cancel = true;
-                        MessageBox.Show("Сохранение файла было отменено.");
+                        isSaved = false;
+                        SaveFileDialog saveFileDialog = new SaveFileDialog();
+                        saveFileDialog.Filter = "Text|*.txt|All|*.*";
+                        DialogResult res = saveFileDialog.ShowDialog();
+                        if (res == DialogResult.Cancel)
+                        {
+                            e.Cancel = true;
+                            MessageBox.Show("Сохранение файла было отменено.");
+                        }
+                        fileName = saveFileDialog.FileName;
                     }
-                    fileName = saveFileDialog.FileName;
+                    TextEditorFunctions.TextEditor.Save(fileName, richTextBox1.Text);
+                    richTextBox1.Text = string.Empty;
+                    fileName = string.Empty;
+                    isSaved = false;
                 }
-                TextEditorFunctions.TextEditor.Save(fileName, richTextBox1.Text);
-                richTextBox1.Text = string.Empty;
-                fileName = string.Empty;
-                isSaved = false;
-            }
-            else if (result == DialogResult.No)
-            {
-                richTextBox1.Text = string.Empty;
-                fileName = string.Empty;
-                isSaved = false;
-            }
-            else if(result == DialogResult.Cancel)
-            {
-                e.Cancel = true;
+                else if (result == DialogResult.No)
+                {
+                    richTextBox1.Text = string.Empty;
+                    fileName = string.Empty;
+                    isSaved = false;
+                }
+                else if (result == DialogResult.Cancel)
+                {
+                    e.Cancel = true;
+                }
             }
         }
 
@@ -344,7 +343,8 @@ namespace TextEditor
 
         private void справкаToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (!form2.Created) {
+            if (!form2.Created)
+            {
                 form2 = new Form2();
                 form2.Show();
             }

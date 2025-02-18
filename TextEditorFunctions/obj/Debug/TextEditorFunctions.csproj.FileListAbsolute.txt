@@ -16,3 +16,9 @@ D:\Projects\RPMLAB9\TextEditorFunctions\obj\Debug\TextEditorFunctions.csproj.Ass
 D:\Projects\RPMLAB9\TextEditorFunctions\obj\Debug\TextEditorFunctions.csproj.CoreCompileInputs.cache
 D:\Projects\RPMLAB9\TextEditorFunctions\obj\Debug\TextEditorFunctions.dll
 D:\Projects\RPMLAB9\TextEditorFunctions\obj\Debug\TextEditorFunctions.pdb
+C:\Users\329191-13\Desktop\RPMLAB9\TextEditorFunctions\bin\Debug\TextEditorFunctions.dll
+C:\Users\329191-13\Desktop\RPMLAB9\TextEditorFunctions\bin\Debug\TextEditorFunctions.pdb
+C:\Users\329191-13\Desktop\RPMLAB9\TextEditorFunctions\obj\Debug\TextEditorFunctions.csproj.AssemblyReference.cache
+C:\Users\329191-13\Desktop\RPMLAB9\TextEditorFunctions\obj\Debug\TextEditorFunctions.csproj.CoreCompileInputs.cache
+C:\Users\329191-13\Desktop\RPMLAB9\TextEditorFunctions\obj\Debug\TextEditorFunctions.dll
+C:\Users\329191-13\Desktop\RPMLAB9\TextEditorFunctions\obj\Debug\TextEditorFunctions.pdb
